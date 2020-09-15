@@ -8,6 +8,17 @@ const config = {
     path: path.join(root, "dist"),
     filename: "bundle.js",
   },
+  module: {
+    rules: [
+      {
+        test: /\.styl(us)?$/,
+        use: [
+          path.join(root, "loaders", "style-loader.js"),
+          path.join(root, "loaders", "stylus-loader.js"),
+        ],
+      },
+    ],
+  },
 };
 
 module.exports = config;
